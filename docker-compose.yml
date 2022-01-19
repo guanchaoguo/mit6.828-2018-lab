@@ -1,0 +1,19 @@
+version: '3'
+services:
+  jos:
+    image: xv6
+    container_name: clion_remote_env
+    volumes:
+      - .:/jos
+    ports:
+      - "2222:22"
+      - "25000:25000"
+#    command: [ "/bin/bash","-c","cd /jos && make qemu-nox-gdb"]
+    command: [ "/bin/bash"]
+    privileged: true
+    ulimits:
+        core: -1
+    stdin_open: true
+    tty: true
+
+
