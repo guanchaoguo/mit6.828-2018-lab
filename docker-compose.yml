@@ -8,8 +8,8 @@ services:
     ports:
       - "2222:22"
       - "25000:25000"
-#    command: [ "/bin/bash","-c","cd /jos && make qemu-nox-gdb"]
-    command: [ "/bin/bash"]
+    command: [ "/bin/bash","-c","cd /jos && make qemu-nox-gdb"]
+#    command: [ "/bin/bash"]
     privileged: true
     ulimits:
         core: -1
