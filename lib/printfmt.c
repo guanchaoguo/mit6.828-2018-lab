@@ -89,13 +89,13 @@ vprintfmt(void (*putch)(int, void*), void *putdat, const char *fmt, va_list ap)
 	char padc;
 
 	while (1) {
-		while ((ch = *(unsigned char *) fmt++) != '%') {		//先将非格式化字符输出到控制台。
-			if (ch == '\0')										//如果没有格式化字符直接返回
+		while ((ch = *(unsigned char *) fmt++) != '%') {
+			if (ch == '\0')
 				return;
 			putch(ch, putdat);
 		}
 
-		// Process a %-escape sequence							//接着处理格式化字符
+		// Process a %-escape sequence
 		padc = ' ';
 		width = -1;
 		precision = -1;
@@ -205,11 +205,12 @@ vprintfmt(void (*putch)(int, void*), void *putdat, const char *fmt, va_list ap)
 
 		// (unsigned) octal
 		case 'o':
-			// 从ap指向的可变字符串中获取输出的值
-			num = getuint(&ap, lflag);
-			//设置基数为8
-			base = 8;
-			goto number;
+			// Replace this with your code.
+			putch('X', putdat);
+			putch('X', putdat);
+			putch('X', putdat);
+			break;
+
 		// pointer
 		case 'p':
 			putch('0', putdat);
